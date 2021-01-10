@@ -123,7 +123,7 @@ def main():
             stack_trace.append(
                 "File : %s , Line: %s , Func.Name: %s, Message: %s" % (trace[0], trace[1], trace[2], trace[3]))
         driver.save_screenshot("{0}_Error_{1}.png".format(date, ex_type.__name__))
-        logger.showerror(f"Error! Invalid credentials entered. Error type: {ex_type.__name__}")
+        logger.info(f"Error! Invalid credentials entered. Error type: {ex_type.__name__}")
 
     # Try-except block -- handling all generic exceptions.
     try:
@@ -150,9 +150,8 @@ def main():
             button_keywords.click()
             time.sleep(1)
             messagebox.showinfo("Waiting for button to appear!")
-            #count_pages = driver.find_element_by_xpath(
-            #    '//*[@id="search-keywords"]/div/span/div[2]/div[1]/div/span').text
-            #logger.info(f"Obtaining number of pages before counter extraction: {count_pages}")
+            """count_pages = driver.find_element_by_xpath('//*[@id="search-keywords"]/div/span/div[2]/div[1]/div/span').text
+            logger.info(f"Obtaining number of pages before counter extraction: {count_pages}")
 
             len_split_text = len(list(count_pages))
             # Retrieving the count of total items in the table.
@@ -170,7 +169,7 @@ def main():
                 new_list_elements = np.atleast_2d(list_elements)
                 forward = driver.find_element_by_xpath(
                     '//*[@id="search-keywords"]/div/span/div[2]/div[1]/div/div[2]/span/span/span').click()
-                time.sleep(1)
+                time.sleep(1)"""
 
         # Save extracted web element data to .csv file.
         np.savetxt(csv_file_name, new_list_elements, delimiter=",", fmt='%s')

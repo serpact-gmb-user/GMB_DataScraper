@@ -124,7 +124,7 @@ def main():
             stack_trace.append(
                 "File : %s , Line: %s , Func.Name: %s, Message: %s" % (trace[0], trace[1], trace[2], trace[3]))
         driver.save_screenshot("{0}_Error_{1}.png".format(date, ex_type.__name__))
-        logger.showerror(f"Error! Invalid credentials entered. Error type: {ex_type.__name__}")
+        logger.info(f"Error! Invalid credentials entered. Error type: {ex_type.__name__}")
 
     # Try-except block -- handling all generic exceptions.
     try:
@@ -148,17 +148,15 @@ def main():
             driver.get(row[1])
             time.sleep(1)
             # Searching for 'Show keywords result' on GMB My Business Account page.
-            button_keywords = driver.find_element(By.XPATH,
-                                                  '//*[@id="yDmH0d"]/c-wiz/div[2]/div[1]/div/div/div[1]/div[2]/div[2]/div/div/div')
+            button_keywords = driver.find_element(By.XPATH,'//*[@id="yDmH0d"]/c-wiz/div[2]/div[1]/div/div/div[1]/div[2]/div[2]/div/div/div')
             button_keywords.click()
-            # Waiting for button to be selectable to appear on screen and be clicked.
             time.sleep(2)
+            # Waiting for button to be selectable to appear on screen and be clicked.
+            messagebox.showinfo("Attempt to clock on Show more results!")
 
-            '''From here on tomorrow - 10.01.2021'''
             # Search/click for 'See more keywords' by xpath element. TEST from this sectin on tomorrow -- see how to capture the Вижте още button.
-            button_showKeywords = driver.find_element(By.CSS_SELECTOR, '#cHwEyf > div.FHHqqd > div > div > div.hJKKpe > div > div.J7elmb.bc99Ed.mL6HXe.RN8axf > c-wiz > c-wiz > div > div > details > div.ceU0Yb > div.guqnIf > div').text
-            print(button_showKeywords)
-            button_showKeywords.click()
+            keywords_results = driver.find_element(By.PARTIAL_LINK_TEXT, '/performance/queries').text
+            print(keywords_results)
             time.sleep(2)
             messagebox.showinfo("Navigate down the web page!")
             # Search click (test).
@@ -262,7 +260,7 @@ def main():
             stack_trace.append(
                 "File : %s , Line: %s , Func.Name: %s, Message: %s" % (trace[0], trace[1], trace[2], trace[3]))
         driver.save_screenshot("{0}_Error_{1}.png".format(date, ex_type.__name__))
-        logger.showerror(f"Error! Generic system exception. Error type: {ex_type.__name__}")
+        logger.info(f"Error! Generic system exception. Error type: {ex_type.__name__}")
 
     # Closing web browser session(s).
     end = timer()
