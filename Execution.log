@@ -1,0 +1,557 @@
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_19:04:02
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_19:04:04
+__main__ - INFO - Entering username credential : 10.01.2021_19:04:05
+__main__ - INFO - Entering password credential : 10.01.2021_19:04:08
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_19:04:11
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_19:04:11
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_19:07:06
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_19:07:09
+__main__ - INFO - Entering username credential : 10.01.2021_19:07:10
+__main__ - INFO - Entering password credential : 10.01.2021_19:07:13
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_19:07:16
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_19:07:16
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_19:08:35
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_19:08:38
+__main__ - INFO - Entering username credential : 10.01.2021_19:08:39
+__main__ - INFO - Entering password credential : 10.01.2021_19:08:42
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_19:08:45
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_19:08:45
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_19:09:17
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_19:09:20
+__main__ - INFO - Entering username credential : 10.01.2021_19:09:21
+__main__ - INFO - Entering password credential : 10.01.2021_19:09:24
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_19:09:28
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_19:09:28
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_19:14:34
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_19:14:36
+__main__ - INFO - Entering username credential : 10.01.2021_19:14:38
+__main__ - INFO - Entering password credential : 10.01.2021_19:14:41
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_19:14:44
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_19:14:44
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_19:16:40
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_19:16:43
+__main__ - INFO - Entering username credential : 10.01.2021_19:16:44
+__main__ - INFO - Entering password credential : 10.01.2021_19:16:47
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_19:16:50
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_19:16:50
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_19:18:26
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_19:18:28
+__main__ - INFO - Entering username credential : 10.01.2021_19:18:29
+__main__ - INFO - Entering password credential : 10.01.2021_19:18:32
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_19:18:36
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_19:18:36
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_19:21:05
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_19:21:07
+__main__ - INFO - Entering username credential : 10.01.2021_19:21:08
+__main__ - INFO - Entering password credential : 10.01.2021_19:21:11
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_19:21:14
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_19:21:14
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_19:22:42
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_19:22:45
+__main__ - INFO - Entering username credential : 10.01.2021_19:22:46
+__main__ - INFO - Entering password credential : 10.01.2021_19:22:49
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_19:22:52
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_19:22:52
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_19:23:17
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_19:23:20
+__main__ - INFO - Entering username credential : 10.01.2021_19:23:21
+__main__ - INFO - Entering password credential : 10.01.2021_19:23:24
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_19:23:27
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_19:23:27
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_19:27:42
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_19:27:44
+__main__ - INFO - Entering username credential : 10.01.2021_19:27:45
+__main__ - INFO - Entering password credential : 10.01.2021_19:27:48
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_19:27:51
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_19:27:51
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_19:30:56
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_19:30:59
+__main__ - INFO - Entering username credential : 10.01.2021_19:31:00
+__main__ - INFO - Entering password credential : 10.01.2021_19:31:03
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_19:31:06
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_19:31:06
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_19:32:59
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_19:33:02
+__main__ - INFO - Entering username credential : 10.01.2021_19:33:03
+__main__ - INFO - Entering password credential : 10.01.2021_19:33:06
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_19:33:09
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_19:33:09
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_19:36:09
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_19:36:11
+__main__ - INFO - Entering username credential : 10.01.2021_19:36:13
+__main__ - INFO - Entering password credential : 10.01.2021_19:36:16
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_19:36:19
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_19:36:19
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_19:36:42
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_19:36:44
+__main__ - INFO - Entering username credential : 10.01.2021_19:36:45
+__main__ - INFO - Entering password credential : 10.01.2021_19:36:48
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_19:36:51
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_19:36:51
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_19:38:03
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_19:38:06
+__main__ - INFO - Entering username credential : 10.01.2021_19:38:07
+__main__ - INFO - Entering password credential : 10.01.2021_19:38:10
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_19:38:13
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_19:38:13
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_19:40:29
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_19:40:31
+__main__ - INFO - Entering username credential : 10.01.2021_19:40:32
+__main__ - INFO - Entering password credential : 10.01.2021_19:40:35
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_19:40:38
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_19:40:38
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_19:42:27
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_19:42:29
+__main__ - INFO - Entering username credential : 10.01.2021_19:42:30
+__main__ - INFO - Entering password credential : 10.01.2021_19:42:33
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_19:42:37
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_19:42:37
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_19:43:05
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_19:43:07
+__main__ - INFO - Entering username credential : 10.01.2021_19:43:08
+__main__ - INFO - Entering password credential : 10.01.2021_19:43:11
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_19:43:14
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_19:43:14
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_19:43:54
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_19:43:56
+__main__ - INFO - Entering username credential : 10.01.2021_19:43:57
+__main__ - INFO - Entering password credential : 10.01.2021_19:44:00
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_19:44:03
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_19:44:03
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_19:44:25
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_19:49:07
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_19:49:10
+__main__ - INFO - Entering username credential : 10.01.2021_19:49:11
+__main__ - INFO - Entering password credential : 10.01.2021_19:49:14
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_19:49:17
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_19:49:17
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_19:49:41
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_19:49:44
+__main__ - INFO - Entering username credential : 10.01.2021_19:49:45
+__main__ - INFO - Entering password credential : 10.01.2021_19:49:48
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_19:49:51
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_19:49:51
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_19:50:44
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_19:50:47
+__main__ - INFO - Entering username credential : 10.01.2021_19:50:48
+__main__ - INFO - Entering password credential : 10.01.2021_19:50:51
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_19:50:54
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_19:50:54
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_19:51:24
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_19:51:32
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_19:54:02
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_19:54:04
+__main__ - INFO - Entering username credential : 10.01.2021_19:54:05
+__main__ - INFO - Entering password credential : 10.01.2021_19:54:08
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_19:54:12
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_19:54:12
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_19:54:52
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_19:56:17
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_19:57:07
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_19:57:09
+__main__ - INFO - Entering username credential : 10.01.2021_19:57:10
+__main__ - INFO - Entering password credential : 10.01.2021_19:57:13
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_19:57:16
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_19:57:16
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_19:59:04
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_19:59:06
+__main__ - INFO - Entering username credential : 10.01.2021_19:59:08
+__main__ - INFO - Entering password credential : 10.01.2021_19:59:11
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_19:59:14
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_19:59:14
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_20:04:37
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_20:04:40
+__main__ - INFO - Entering username credential : 10.01.2021_20:04:41
+__main__ - INFO - Entering password credential : 10.01.2021_20:04:44
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_20:04:47
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_20:04:47
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_20:05:41
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_20:05:43
+__main__ - INFO - Entering username credential : 10.01.2021_20:05:45
+__main__ - INFO - Entering password credential : 10.01.2021_20:05:48
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_20:05:51
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_20:05:51
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_20:06:18
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_20:06:20
+__main__ - INFO - Entering username credential : 10.01.2021_20:06:21
+__main__ - INFO - Entering password credential : 10.01.2021_20:06:24
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_20:06:28
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_20:06:28
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_20:15:37
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_20:15:39
+__main__ - INFO - Entering username credential : 10.01.2021_20:15:40
+__main__ - INFO - Entering password credential : 10.01.2021_20:15:44
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_20:15:47
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_20:15:47
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_20:20:10
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_20:20:12
+__main__ - INFO - Entering username credential : 10.01.2021_20:20:13
+__main__ - INFO - Entering password credential : 10.01.2021_20:20:16
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_20:20:20
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_20:20:20
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_20:22:36
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_20:22:38
+__main__ - INFO - Entering username credential : 10.01.2021_20:22:40
+__main__ - INFO - Entering password credential : 10.01.2021_20:22:43
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_20:22:46
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_20:22:46
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_20:23:42
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_20:23:44
+__main__ - INFO - Entering username credential : 10.01.2021_20:23:45
+__main__ - INFO - Entering password credential : 10.01.2021_20:23:48
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_20:23:52
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_20:23:52
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_21:12:08
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_21:12:10
+__main__ - INFO - Entering username credential : 10.01.2021_21:12:11
+__main__ - INFO - Entering password credential : 10.01.2021_21:12:15
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_21:12:18
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_21:12:18
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_21:15:02
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_21:15:04
+__main__ - INFO - Entering username credential : 10.01.2021_21:15:05
+__main__ - INFO - Entering password credential : 10.01.2021_21:15:09
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_21:15:12
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_21:15:12
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_21:15:41
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_21:15:43
+__main__ - INFO - Entering username credential : 10.01.2021_21:15:45
+__main__ - INFO - Entering password credential : 10.01.2021_21:15:48
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_21:15:51
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_21:15:51
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_21:18:05
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_21:18:07
+__main__ - INFO - Entering username credential : 10.01.2021_21:18:08
+__main__ - INFO - Entering password credential : 10.01.2021_21:18:11
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_21:18:14
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_21:18:14
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_21:20:04
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_21:20:06
+__main__ - INFO - Entering username credential : 10.01.2021_21:20:07
+__main__ - INFO - Entering password credential : 10.01.2021_21:20:10
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_21:20:13
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_21:20:13
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_21:20:40
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_21:20:42
+__main__ - INFO - Entering username credential : 10.01.2021_21:20:44
+__main__ - INFO - Entering password credential : 10.01.2021_21:20:47
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_21:20:50
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_21:20:50
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_21:23:38
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_21:23:40
+__main__ - INFO - Entering username credential : 10.01.2021_21:23:41
+__main__ - INFO - Entering password credential : 10.01.2021_21:23:44
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_21:23:47
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_21:23:47
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_21:25:57
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_21:25:59
+__main__ - INFO - Entering username credential : 10.01.2021_21:26:00
+__main__ - INFO - Entering password credential : 10.01.2021_21:26:03
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_21:26:06
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_21:26:06
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_21:28:19
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_21:28:21
+__main__ - INFO - Entering username credential : 10.01.2021_21:28:22
+__main__ - INFO - Entering password credential : 10.01.2021_21:28:25
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_21:28:28
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_21:28:28
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_21:31:03
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_21:31:05
+__main__ - INFO - Entering username credential : 10.01.2021_21:31:06
+__main__ - INFO - Entering password credential : 10.01.2021_21:31:10
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_21:31:13
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_21:31:13
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_21:36:45
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_21:36:48
+__main__ - INFO - Entering username credential : 10.01.2021_21:36:49
+__main__ - INFO - Entering password credential : 10.01.2021_21:36:52
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_21:36:55
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_21:36:55
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_21:37:59
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_21:38:01
+__main__ - INFO - Entering username credential : 10.01.2021_21:38:03
+__main__ - INFO - Entering password credential : 10.01.2021_21:38:06
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_21:38:09
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_21:38:09
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_21:39:07
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_21:39:09
+__main__ - INFO - Entering username credential : 10.01.2021_21:39:10
+__main__ - INFO - Entering password credential : 10.01.2021_21:39:13
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_21:39:16
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_21:39:16
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_21:39:28
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_21:39:37
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_21:41:30
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_21:41:32
+__main__ - INFO - Entering username credential : 10.01.2021_21:41:33
+__main__ - INFO - Entering password credential : 10.01.2021_21:41:36
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_21:41:39
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_21:41:39
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_21:42:37
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_21:42:39
+__main__ - INFO - Entering username credential : 10.01.2021_21:42:40
+__main__ - INFO - Entering password credential : 10.01.2021_21:42:43
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_21:42:46
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_21:42:46
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_21:44:05
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_21:44:07
+__main__ - INFO - Entering username credential : 10.01.2021_21:44:08
+__main__ - INFO - Entering password credential : 10.01.2021_21:44:11
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_21:44:14
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_21:44:14
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_21:49:13
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_21:49:15
+__main__ - INFO - Entering username credential : 10.01.2021_21:49:16
+__main__ - INFO - Entering password credential : 10.01.2021_21:49:19
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_21:49:22
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_21:49:22
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_21:49:36
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_21:50:05
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_21:51:53
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_21:51:56
+__main__ - INFO - Entering username credential : 10.01.2021_21:51:57
+__main__ - INFO - Entering password credential : 10.01.2021_21:52:00
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_21:52:03
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_21:52:03
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_21:55:40
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_21:55:42
+__main__ - INFO - Entering username credential : 10.01.2021_21:55:43
+__main__ - INFO - Entering password credential : 10.01.2021_21:55:46
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_21:55:50
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_21:55:50
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_22:04:20
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_22:04:22
+__main__ - INFO - Entering username credential : 10.01.2021_22:04:24
+__main__ - INFO - Entering password credential : 10.01.2021_22:04:27
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_22:04:30
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_22:04:30
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_22:09:26
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_22:09:29
+__main__ - INFO - Entering username credential : 10.01.2021_22:09:30
+__main__ - INFO - Entering password credential : 10.01.2021_22:09:33
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_22:09:36
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_22:09:36
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_22:15:27
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_22:15:29
+__main__ - INFO - Entering username credential : 10.01.2021_22:15:30
+__main__ - INFO - Entering password credential : 10.01.2021_22:15:33
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_22:15:36
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_22:15:36
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_22:52:25
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_22:52:27
+__main__ - INFO - Entering username credential : 10.01.2021_22:52:28
+__main__ - INFO - Entering password credential : 10.01.2021_22:52:31
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_22:52:34
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_22:52:34
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_22:53:51
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_22:53:53
+__main__ - INFO - Entering username credential : 10.01.2021_22:53:54
+__main__ - INFO - Entering password credential : 10.01.2021_22:53:57
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_22:54:01
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_22:54:01
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_22:59:12
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_22:59:14
+__main__ - INFO - Entering username credential : 10.01.2021_22:59:15
+__main__ - INFO - Entering password credential : 10.01.2021_22:59:18
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_22:59:21
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_22:59:21
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_23:05:01
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_23:05:03
+__main__ - INFO - Entering username credential : 10.01.2021_23:05:04
+__main__ - INFO - Entering password credential : 10.01.2021_23:05:07
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_23:05:11
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_23:05:11
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_23:31:26
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_23:31:28
+__main__ - INFO - Entering username credential : 10.01.2021_23:31:30
+__main__ - INFO - Entering password credential : 10.01.2021_23:31:33
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_23:31:36
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_23:31:36
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_23:33:05
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_23:33:07
+__main__ - INFO - Entering username credential : 10.01.2021_23:33:08
+__main__ - INFO - Entering password credential : 10.01.2021_23:33:11
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_23:33:15
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_23:33:15
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_23:35:30
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_23:35:32
+__main__ - INFO - Entering username credential : 10.01.2021_23:35:34
+__main__ - INFO - Entering password credential : 10.01.2021_23:35:37
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_23:35:40
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_23:35:40
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_23:42:18
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_23:42:20
+__main__ - INFO - Entering username credential : 10.01.2021_23:42:21
+__main__ - INFO - Entering password credential : 10.01.2021_23:42:24
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_23:42:27
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_23:42:27
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_23:43:40
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_23:43:42
+__main__ - INFO - Entering username credential : 10.01.2021_23:43:43
+__main__ - INFO - Entering password credential : 10.01.2021_23:43:46
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_23:43:49
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_23:43:49
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_23:49:19
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_23:49:22
+__main__ - INFO - Entering username credential : 10.01.2021_23:49:23
+__main__ - INFO - Entering password credential : 10.01.2021_23:49:26
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_23:49:29
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_23:49:29
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_23:50:39
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_23:50:42
+__main__ - INFO - Entering username credential : 10.01.2021_23:50:43
+__main__ - INFO - Entering password credential : 10.01.2021_23:50:46
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_23:50:49
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_23:50:49
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_23:53:11
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_23:53:13
+__main__ - INFO - Entering username credential : 10.01.2021_23:53:14
+__main__ - INFO - Entering password credential : 10.01.2021_23:53:17
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_23:53:21
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_23:53:21
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_23:54:03
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_23:54:05
+__main__ - INFO - Entering username credential : 10.01.2021_23:54:07
+__main__ - INFO - Entering password credential : 10.01.2021_23:54:10
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_23:54:13
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_23:54:13
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_23:54:52
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_23:54:54
+__main__ - INFO - Entering username credential : 10.01.2021_23:54:56
+__main__ - INFO - Entering password credential : 10.01.2021_23:54:59
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_23:55:02
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_23:55:02
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_23:56:05
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_23:56:08
+__main__ - INFO - Entering username credential : 10.01.2021_23:56:09
+__main__ - INFO - Entering password credential : 10.01.2021_23:56:12
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_23:56:15
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_23:56:15
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 10.01.2021_23:56:50
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 10.01.2021_23:56:52
+__main__ - INFO - Entering username credential : 10.01.2021_23:56:53
+__main__ - INFO - Entering password credential : 10.01.2021_23:56:57
+__main__ - INFO - Navigating into GMB Data Scraper business account : 10.01.2021_23:57:00
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 10.01.2021_23:57:00
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 11.01.2021_00:05:31
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 11.01.2021_00:05:33
+__main__ - INFO - Entering username credential : 11.01.2021_00:05:34
+__main__ - INFO - Entering password credential : 11.01.2021_00:05:38
+__main__ - INFO - Navigating into GMB Data Scraper business account : 11.01.2021_00:05:41
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 11.01.2021_00:05:41
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 11.01.2021_00:06:13
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 11.01.2021_00:06:16
+__main__ - INFO - Entering username credential : 11.01.2021_00:06:17
+__main__ - INFO - Entering password credential : 11.01.2021_00:06:20
+__main__ - INFO - Navigating into GMB Data Scraper business account : 11.01.2021_00:06:23
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 11.01.2021_00:06:23
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 11.01.2021_00:09:31
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 11.01.2021_00:09:33
+__main__ - INFO - Entering username credential : 11.01.2021_00:09:34
+__main__ - INFO - Entering password credential : 11.01.2021_00:09:38
+__main__ - INFO - Navigating into GMB Data Scraper business account : 11.01.2021_00:09:41
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 11.01.2021_00:09:41
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 11.01.2021_00:10:12
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 11.01.2021_00:10:21
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 11.01.2021_00:25:20
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 11.01.2021_00:25:23
+__main__ - INFO - Entering username credential : 11.01.2021_00:25:24
+__main__ - INFO - Entering password credential : 11.01.2021_00:25:27
+__main__ - INFO - Navigating into GMB Data Scraper business account : 11.01.2021_00:25:30
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 11.01.2021_00:25:30
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 11.01.2021_00:26:27
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 11.01.2021_00:26:30
+__main__ - INFO - Entering username credential : 11.01.2021_00:26:31
+__main__ - INFO - Entering password credential : 11.01.2021_00:26:34
+__main__ - INFO - Navigating into GMB Data Scraper business account : 11.01.2021_00:26:37
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 11.01.2021_00:26:37
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 11.01.2021_00:27:00
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 11.01.2021_00:27:03
+__main__ - INFO - Entering username credential : 11.01.2021_00:27:04
+__main__ - INFO - Entering password credential : 11.01.2021_00:27:07
+__main__ - INFO - Navigating into GMB Data Scraper business account : 11.01.2021_00:27:10
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 11.01.2021_00:27:10
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 11.01.2021_00:28:13
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 11.01.2021_00:28:15
+__main__ - INFO - Entering username credential : 11.01.2021_00:28:17
+__main__ - INFO - Entering password credential : 11.01.2021_00:28:20
+__main__ - INFO - Navigating into GMB Data Scraper business account : 11.01.2021_00:28:23
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 11.01.2021_00:28:23
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 11.01.2021_00:28:52
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 11.01.2021_00:28:55
+__main__ - INFO - Entering username credential : 11.01.2021_00:28:56
+__main__ - INFO - Entering password credential : 11.01.2021_00:28:59
+__main__ - INFO - Navigating into GMB Data Scraper business account : 11.01.2021_00:29:02
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 11.01.2021_00:29:02
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 11.01.2021_00:31:11
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 11.01.2021_00:31:13
+__main__ - INFO - Entering username credential : 11.01.2021_00:31:14
+__main__ - INFO - Entering password credential : 11.01.2021_00:31:17
+__main__ - INFO - Navigating into GMB Data Scraper business account : 11.01.2021_00:31:20
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 11.01.2021_00:31:20
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 11.01.2021_00:40:20
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 11.01.2021_00:40:22
+__main__ - INFO - Entering username credential : 11.01.2021_00:40:24
+__main__ - INFO - Entering password credential : 11.01.2021_00:40:27
+__main__ - INFO - Navigating into GMB Data Scraper business account : 11.01.2021_00:40:30
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 11.01.2021_00:40:30
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 11.01.2021_00:42:17
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 11.01.2021_00:42:19
+__main__ - INFO - Entering username credential : 11.01.2021_00:42:20
+__main__ - INFO - Entering password credential : 11.01.2021_00:42:23
+__main__ - INFO - Navigating into GMB Data Scraper business account : 11.01.2021_00:42:27
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 11.01.2021_00:42:27
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 11.01.2021_00:43:13
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 11.01.2021_00:43:16
+__main__ - INFO - Entering username credential : 11.01.2021_00:43:17
+__main__ - INFO - Entering password credential : 11.01.2021_00:43:20
+__main__ - INFO - Navigating into GMB Data Scraper business account : 11.01.2021_00:43:23
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 11.01.2021_00:43:23
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 11.01.2021_00:45:14
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 11.01.2021_00:45:16
+__main__ - INFO - Entering username credential : 11.01.2021_00:45:17
+__main__ - INFO - Entering password credential : 11.01.2021_00:45:20
+__main__ - INFO - Navigating into GMB Data Scraper business account : 11.01.2021_00:45:23
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 11.01.2021_00:45:23
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 11.01.2021_00:45:50
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 11.01.2021_00:45:52
+__main__ - INFO - Entering username credential : 11.01.2021_00:45:54
+__main__ - INFO - Entering password credential : 11.01.2021_00:45:57
+__main__ - INFO - Navigating into GMB Data Scraper business account : 11.01.2021_00:46:00
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 11.01.2021_00:46:00
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 11.01.2021_00:47:08
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 11.01.2021_00:47:11
+__main__ - INFO - Entering username credential : 11.01.2021_00:47:12
+__main__ - INFO - Entering password credential : 11.01.2021_00:47:15
+__main__ - INFO - Navigating into GMB Data Scraper business account : 11.01.2021_00:47:18
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 11.01.2021_00:47:18
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 11.01.2021_00:48:12
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 11.01.2021_00:48:14
+__main__ - INFO - Entering username credential : 11.01.2021_00:48:15
+__main__ - INFO - Entering password credential : 11.01.2021_00:48:18
+__main__ - INFO - Navigating into GMB Data Scraper business account : 11.01.2021_00:48:21
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 11.01.2021_00:48:21
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 11.01.2021_00:48:46
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 11.01.2021_00:48:48
+__main__ - INFO - Entering username credential : 11.01.2021_00:48:49
+__main__ - INFO - Entering password credential : 11.01.2021_00:48:52
+__main__ - INFO - Navigating into GMB Data Scraper business account : 11.01.2021_00:48:56
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 11.01.2021_00:48:56
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 11.01.2021_00:52:50
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 11.01.2021_00:52:52
+__main__ - INFO - Entering username credential : 11.01.2021_00:52:54
+__main__ - INFO - Entering password credential : 11.01.2021_00:52:57
+__main__ - INFO - Navigating into GMB Data Scraper business account : 11.01.2021_00:53:00
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 11.01.2021_00:53:00
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 11.01.2021_00:53:40
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 11.01.2021_00:53:43
+__main__ - INFO - Entering username credential : 11.01.2021_00:53:44
+__main__ - INFO - Entering password credential : 11.01.2021_00:53:47
+__main__ - INFO - Navigating into GMB Data Scraper business account : 11.01.2021_00:53:50
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 11.01.2021_00:53:50
+__main__ - INFO - Obtaining Chrome Browser and Driver versions: 87.0.4280.141, 87.0.4280.88 : 11.01.2021_00:54:29
+__main__ - INFO - Accessing GMB Data Scraper business account login screen : 11.01.2021_00:54:31
+__main__ - INFO - Entering username credential : 11.01.2021_00:54:33
+__main__ - INFO - Entering password credential : 11.01.2021_00:54:36
+__main__ - INFO - Navigating into GMB Data Scraper business account : 11.01.2021_00:54:39
+__main__ - INFO - Reading GMB Business account links from GMB_Accounts.csv : 11.01.2021_00:54:39
