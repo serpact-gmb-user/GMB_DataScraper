@@ -21,6 +21,8 @@ from tkinter import messagebox
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from bs4 import BeautifulSoup
+from selenium.webdriver.common.keys import Keys
+
 
 # Main function declaration.
 def main():
@@ -86,7 +88,7 @@ def main():
     #      logger.error("Chrome Driver and Browser versions incompatible. Ending process execution")
     #     driver.close()
 
-    driver.maximize_window()
+    # driver.maximize_window()
     driver.get(
         'https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?redirect_uri=https%3A%2F%2Fdevelopers.google.com%2Foauthplayground&prompt=consent&response_type=code&client_id=407408718192.apps.googleusercontent.com&scope=email&access_type=offline&flowName=GeneralOAuthFlow')
     driver.maximize_window()
@@ -152,17 +154,26 @@ def main():
         button_keywords = driver.find_element(By.XPATH,
                                               '//*[@id="yDmH0d"]/c-wiz/div[2]/div[1]/div/div/div[1]/div[2]/div[2]/div/div/div')
         button_keywords.click()
-        time.sleep(1)
+        time.sleep(2)
+        # pop_up_page = driver.find_element(By.ID, 'yDmH0d').tag_name
+        # driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        # pop_up_page.click()
         # Waiting for button to be selectable to appear on screen and be clicked.
-        # test_element = driver.find_element_by_class_name('WpHeLc VfPpkd-RLmnJb')
-        html = urlopen(row[1])
-        # Proceed from here tomorrow with Bs4
-        soup = BeautifulSoup(html.read(), 'lxml')
-        links = []
-        for link in soup.find_all('href', href=True):
-            links.append(link)
-            print(f'URLs found:{links[:4]}')
-        messagebox.showinfo("End of main!")
+        # counter = 1
+        # while counter <= 20:
+        # driver.get(row[1]).send_keys(Keys.PAGE_DOWN)
+        driver.execute_script("window.scrollTo(0, 1000);")
+        # driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
+        # counter += 1
+            # test_element = driver.find_element_by_class_name('WpHeLc VfPpkd-RLmnJb')
+            # html = urlopen(row[1])
+            # # Proceed from here tomorrow with Bs4
+            # soup = BeautifulSoup(html.read(), 'lxml')
+            # links = []
+            # for link in soup.find_all('href', href=True):
+            #     links.append(link)
+            #     print(f'URLs found:{links[:4]}')
+            # messagebox.showinfo("End of main!")
 
 
 # Execute GMB Data Scraper.
