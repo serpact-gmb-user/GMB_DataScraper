@@ -1,42 +1,19 @@
-import csv
-import math
-import os
-import time
-import re
-import sys
-from re import match
-from urllib.request import Request, urlopen
-
-import pandas as pd
-import numpy as np
-import logging
-import keyring
-import pywin32_system32
-import traceback
-
-from timeit import default_timer as timer
-from datetime import timedelta, datetime
-from tkinter import messagebox
-
-import requests
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from bs4 import BeautifulSoup
-import httplib2
-from bs4 import BeautifulSoup, SoupStrainer
-import urllib.request
-import re
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from pynput.mouse import Button, Controller
-from selenium.webdriver.common.action_chains import ActionChains
-import urllib3
-import pyautogui as P
-from openpyxl import Workbook
-import pyperclip
-import string
 import datetime
+import logging
+import os
+import sys
+import time
+import traceback
+from timeit import default_timer as timer
+
+import keyring
+import pandas as pd
+import pyautogui as P
+from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
 
 # Add emailing functionality (dev-error log, business log, error-screenshot attachment).
 username = "stoyan24"
@@ -163,47 +140,6 @@ df_search_queries = df_converted.iloc[1::3]
 df_volume = df_converted.iloc[2::3]
 # Assign Search query results a column name - 'Search query'.
 df_column_search_queries = pd.DataFrame(df_search_queries.values, columns=['Search query'])
-# lambda expression for find/replace a comma with emtpy space, avoid a new line.
-df_column_search_queries['Search query'] = [x.replace(',', '') for x in df_column_search_queries['Search query']]
-# Assign Volume data column a name - 'Volume'.
-df_column_volume = pd.DataFrame(df_volume.values, columns=['Volume'])
-# Concatenate the dataframes into a single one.
-current_date = [time.strftime("%d-%m-%Y %H:%M:%S")]
-date = time.strftime("%d-%m-%Y %H:%M:%S")
-shop_name = driver.find_element(By.XPATH, '//*[@id="gb"]/div[4]/div[2]/div/c-wiz/div/div[1]/div[1]/div[1]')
-df_date = pd.DataFrame(current_date, columns=['Date'])
-messagebox.showinfo("Print element at each iteration!")
-# print(df_date)
-df_search_queries_volume = pd.concat([df_column_search_queries, df_column_volume, df_date], axis=1)
-# Scroll down to Вижте още button to expand the search query results.
-P.scroll(-10000)
-time.sleep(2)
-messagebox.showinfo("Search query and Volume data combined into a single dataframe.")
-# Save the Google My Business Search query and Volume values inside a .csv file.
-np.savetxt(end_csv_file_name, np.c_[df_search_queries_volume], fmt='%s', delimiter=',',
-           header=str('Search query, Volume, Date'), comments='')
-
-# Insert Date and Group data inside end .csv file.
-df_search_queries_volume['Date'] = df_search_queries_volume['Search query'].apply(lambda x: date)
-df_search_queries_volume['Group'] = df_search_queries_volume['Search query'].apply(lambda y: store_name)
-
-# Save output to GMBDataScrapeFinal.csv file.
-np.savetxt(result_file, np.c_[df_search_queries_volume], fmt='%s', delimiter=',',
-           header=str('Search query, Volume, Date, Project, Group'), comments='')
-logger.info(f'Result file generated: {result_file}')
-messagebox.showinfo("Result file generated!")
-        # writer.writerows(data_output)
-# df_date = pd.DataFrame(date, columns=['Date']).fillna('')
-# df_date.to_csv(end_csv_file_name, mode='a', header=False)
-messagebox.showinfo("Wait to see the results!")
-logger.info(f"Save extracted web data into temporary .csv file in root directory: {end_csv_file_name}")
+print(df_column_search_queries.to_string())
 driver.quit()
-end_time = datetime.datetime.now()
-print(f'Process duration: {end_time - start_time}')
-
-# Clean the folder of residual .csv files.
-# os.remove(csv_file_name)
-# os.remove(new_csv_file_name)
-# os.remove(final_csv_file_name)
-logger.info(
-    f"Cleaning work .csv files from root folder: {csv_file_name}, {new_csv_file_name}, {final_csv_file_name}")
+# Think on how to start incrementation from one and make the logic for clicking on Button to view more results
