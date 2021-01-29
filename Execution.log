@@ -1,0 +1,12 @@
+__main__ - INFO - Entering username credential : 30.01.2021_00:18:46
+__main__ - INFO - Entering password credential : 30.01.2021_00:18:49
+__main__ - INFO - Navigating into GMB Data Scraper business account : 30.01.2021_00:18:52
+__main__ - INFO - Capture store name: Linson Moto - Moto Ekip : 30.01.2021_00:18:55
+__main__ - INFO - Save extracted web data into temporary .csv file in root directory: Result.csv : 30.01.2021_00:19:15
+__main__ - INFO - Cleaning work .csv files from root folder: Group_Project_Date.csv, NewWebPageScrape.csv, FinalWebPageScrape.csv : 30.01.2021_00:19:18
+__main__ - INFO - Entering username credential : 30.01.2021_00:24:13
+__main__ - INFO - Entering password credential : 30.01.2021_00:24:16
+__main__ - INFO - Navigating into GMB Data Scraper business account : 30.01.2021_00:24:19
+__main__ - INFO - Capture store name: Linson Moto - Moto Ekip : 30.01.2021_00:24:22
+__main__ - INFO - Save extracted web data into temporary .csv file in root directory: Result.csv : 30.01.2021_00:24:45
+__main__ - INFO - Cleaning work .csv files from root folder: Group_Project_Date.csv, NewWebPageScrape.csv, FinalWebPageScrape.csv : 30.01.2021_00:24:48

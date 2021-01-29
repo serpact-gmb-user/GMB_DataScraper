@@ -15,7 +15,7 @@ import pywin32_system32
 import traceback
 
 from timeit import default_timer as timer
-from datetime import timedelta
+from datetime import timedelta, datetime
 from tkinter import messagebox
 
 import requests
@@ -87,7 +87,8 @@ format_logger = logging.Formatter('%(name)s - %(levelname)s - %(message)s : %(as
 file_handler.setFormatter(format_logger)
 
 logger.addHandler(file_handler)
-
+# Initiate process from here.
+start_time = datetime.datetime.now()
 driver.maximize_window()
 driver.get("https://business.google.com/insights/l/16717946256408587345")
 # driver.get("https://business.google.com/local/business/12976422705466664939/promote/performance/queries")
@@ -130,9 +131,13 @@ except Exception:
 
 # Click on the 'Покажи още резултати' button
 actions = ActionChains(driver)
+WebDriverWait(driver, 4).until(EC.presence_of_element_located((By.XPATH, '//*[@id="yDmH0d"]/c-wiz/div[2]/div[1]/div/div/div[1]/div[2]/div[2]/div/div/div')))
+# Extract retail store name.
+store_name = driver.find_element(By.XPATH, '//*[@id="gb"]/div[4]/div[2]/div/c-wiz/div/div[1]/div[1]/div[1]').text
+logger.info(f"Capture store name: {store_name}")
 button_keywords = driver.find_element(By.XPATH,
                                       '//*[@id="yDmH0d"]/c-wiz/div[2]/div[1]/div/div/div[1]/div[2]/div[2]/div/div/div')
-time.sleep(2)
+WebDriverWait(driver, 4).until(EC.presence_of_element_located((By.CLASS_NAME, 'VfPpkd-vQzf8d')))
 button_keywords.click()
 WebDriverWait(driver, 4).until(EC.presence_of_element_located((By.TAG_NAME, 'header')))
 time.sleep(2)
@@ -156,23 +161,25 @@ df_search_queries = df_converted.iloc[1::3]
 df_volume = df_converted.iloc[2::3]
 # Assign Search query results a column name - 'Search query'.
 df_column_search_queries = pd.DataFrame(df_search_queries.values, columns=['Search query'])
-# lmbda expression for find/replace a comma with emtpy space, avoid a new line.
+# lambda expression for find/replace a comma with emtpy space, avoid a new line.
 df_column_search_queries['Search query'] = [x.replace(',', '') for x in df_column_search_queries['Search query']]
 # Assign Volume data column a name - 'Volume'.
 df_column_volume = pd.DataFrame(df_volume.values, columns=['Volume'])
 # Concatenate the dataframes into a single one.
-current_date = time.strftime("%d-%m-%Y %H:%M:%S")
-date = {"Date": [current_date]}
-df_date = pd.DataFrame(date)
-print(df_date)
-df_search_queries_volume = pd.concat([df_column_search_queries, df_column_volume], axis=1)
+current_date = [time.strftime("%d-%m-%Y %H:%M:%S")]
+date = time.strftime("%d-%m-%Y %H:%M:%S")
+shop_name = driver.find_element(By.XPATH, '//*[@id="gb"]/div[4]/div[2]/div/c-wiz/div/div[1]/div[1]/div[1]')
+df_date = pd.DataFrame(current_date, columns=['Date'])
+messagebox.showinfo("Print element at each iteration!")
+# print(df_date)
+df_search_queries_volume = pd.concat([df_column_search_queries, df_column_volume, df_date], axis=1)
 # Scroll down to Вижте още button to expand the search query results.
 P.scroll(-10000)
 time.sleep(2)
 messagebox.showinfo("Search query and Volume data combined into a single dataframe.")
 # Save the Google My Business Search query and Volume values inside a .csv file.
 np.savetxt(end_csv_file_name, np.c_[df_search_queries_volume], fmt='%s', delimiter=',',
-           header=str('Search query, Volume'), comments='')
+           header=str('Search query, Volume, Date'), comments='')
 
 # Save the result data into a Result.csv file with Group, Project, Date columns added.
 with open(end_csv_file_name, 'r') as final_empty:
@@ -182,20 +189,27 @@ with open(end_csv_file_name, 'r') as final_empty:
 
         data_output = []
         row = next(reader)
-        row.append('Date')
-        row.append('Group')
-        row.append('Project')
+        # row.append('Date')
+        # row.append('Group')
+        # row.append('Project')
         data_output.append(row)
 
         for row in reader:
             data_output.append(row)
-        writer.writerows(data_output)
-
-logger.info(f"Save extracted web data into temporary .csv file in root directory: {end_csv_file_name}")
+        df_search_queries_volume['Date'] = df_search_queries_volume['Search query'].apply(lambda x: date)
+        df_search_queries_volume['Group'] = df_search_queries_volume['Search query'].apply(lambda y: store_name)
+test_list = 'ResultTestList.csv'
+np.savetxt(test_list, np.c_[df_search_queries_volume], fmt='%s', delimiter=',',
+           header=str('Search query, Volume, Date, Project, Group'), comments='')
 messagebox.showinfo("Wait to see the results!")
+        # writer.writerows(data_output)
+# df_date = pd.DataFrame(date, columns=['Date']).fillna('')
+# df_date.to_csv(end_csv_file_name, mode='a', header=False)
+messagebox.showinfo("Wait to see the results!")
+logger.info(f"Save extracted web data into temporary .csv file in root directory: {end_csv_file_name}")
 driver.quit()
-# reader = csv.reader(open(csv_file_name))
-
+end_time = datetime.datetime.now()
+print(f'Process duration: {end_time - start_time}')
 # Filter the data in initial .csv file before parsing process.
 """for row in reader:
     new_row = []
