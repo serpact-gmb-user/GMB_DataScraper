@@ -120,15 +120,15 @@ logger.info(f"Capture store name: {store_name}")
 # Navigate to search query and volume module window.
 button_keywords = driver.find_element(By.XPATH,
                                       '//*[@id="yDmH0d"]/c-wiz/div[2]/div[1]/div/div/div[1]/div[2]/div[2]/div/div/div')
-WebDriverWait(driver, 4).until(EC.presence_of_element_located((By.CLASS_NAME, 'VfPpkd-vQzf8d')))
+WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.CLASS_NAME, 'VfPpkd-vQzf8d')))
 button_keywords.click()
-WebDriverWait(driver, 4).until(EC.presence_of_element_located((By.TAG_NAME, 'header')))
-time.sleep(2)
+WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.TAG_NAME, 'header')))
+time.sleep(3)
 # Select all data.
 P.scroll(-1000)
-time.sleep(2)
+time.sleep(3)
 P.click(button='left', x=690, y=866, clicks=1)
-time.sleep(2)
+time.sleep(3)
 
 
 # Copy all data into Clipboard.
@@ -153,6 +153,17 @@ while counter <= 7:
     dyn_list = []
     dyn_list.clear()
     dyn_list.append(var)
+    # Instantiate empty list.
+    trim_carriage_return = []
+    for el in dyn_list:
+        trim_carriage_return = [re.sub(r'\r\n', '|', el) for el in dyn_list]
+
+    split_on_pipe_list = [l.split('|') for l in '|'.join(trim_carriage_return).split('|')]
+    # Remove 'Разширения на търсенията'.
+    split_on_pipe_list.pop(0)
+    index = split_on_pipe_list[1::3]
+    print(index[-1])
+    messagebox.showinfo("Show index!")
     # Extract only Search query results.
     # df_search_queries = df_converted.iloc[1::3]
     # Extract only Volume of search queries.
@@ -169,20 +180,23 @@ while counter <= 7:
     # Adjust the logic for clicking on the Show more results button.
     P.click(button='left', x=900, y=940, clicks=1)
     time.sleep(1)
-
+    # Increment counter.
     counter += 1
 
-file_list_trimmed = []
+# Instantiate empty list.
+trim_carriage_return = []
 for el in dyn_list:
-    file_list_trimmed = [re.sub(r'\r\n', '|', el) for el in dyn_list]
+    trim_carriage_return = [re.sub(r'\r\n', '|', el) for el in dyn_list]
 
-list_one = [l.split('|') for l in '|'.join(file_list_trimmed).split('|')]
-list_one.pop(0)
-list_one.pop(0)
-print(list_one)
-search = list_one[1::3]
-volume = list_one[2::3]
-print(search)
+split_on_pipe_list = [l.split('|') for l in '|'.join(trim_carriage_return).split('|')]
+# Remove 'Разширения на търсенията'.
+split_on_pipe_list.pop(0)
+split_on_pipe_list.pop(0)
+# print(split_on_pipe_list)
+# Extract 'Search query' and 'Volume' data (before DataFrame insertion).
+search_query = split_on_pipe_list[1::3]
+volume = split_on_pipe_list[2::3]
+print(search_query)
 print(volume)
 # print(f"List data: \n {list_query}")
 # df_converted = pd.DataFrame(dyn_list, columns=['Index'])
