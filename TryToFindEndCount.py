@@ -4,6 +4,7 @@ import os
 import sys
 import time
 import traceback
+import numpy as np
 from timeit import default_timer as timer
 
 import keyring
@@ -140,6 +141,17 @@ df_search_queries = df_converted.iloc[1::3]
 df_volume = df_converted.iloc[2::3]
 # Assign Search query results a column name - 'Search query'.
 df_column_search_queries = pd.DataFrame(df_search_queries.values, columns=['Search query'])
-print(df_column_search_queries.to_string())
-driver.quit()
+# Increment index
+df_column_search_queries.index = df_column_search_queries.index + 1
+if '00' in str(len(df_column_search_queries.index)):
+    time.sleep(2)
+    # Select all data.
+    P.scroll(-10000)
+    print(P.position())
+    time.sleep(3)
+    # Adjust the logic for clicking on the Show more results button.
+    P.click(button='left', x=759, y=950, clicks=1)
+    time.sleep(1)
+else:
+    driver.quit()
 # Think on how to start incrementation from one and make the logic for clicking on Button to view more results
