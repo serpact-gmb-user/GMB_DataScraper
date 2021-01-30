@@ -6,7 +6,7 @@ import time
 import traceback
 import numpy as np
 from timeit import default_timer as timer
-
+from tkinter import messagebox
 import keyring
 import pandas as pd
 import pyautogui as P
@@ -15,6 +15,8 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
+import pyperclip
+import re
 
 # Add emailing functionality (dev-error log, business log, error-screenshot attachment).
 username = "stoyan24"
@@ -110,7 +112,8 @@ except Exception:
 
 # Click on the 'Покажи още резултати' button
 actions = ActionChains(driver)
-WebDriverWait(driver, 4).until(EC.presence_of_element_located((By.XPATH, '//*[@id="yDmH0d"]/c-wiz/div[2]/div[1]/div/div/div[1]/div[2]/div[2]/div/div/div')))
+WebDriverWait(driver, 4).until(EC.presence_of_element_located(
+    (By.XPATH, '//*[@id="yDmH0d"]/c-wiz/div[2]/div[1]/div/div/div[1]/div[2]/div[2]/div/div/div')))
 # Extract retail store name.
 store_name = driver.find_element(By.XPATH, '//*[@id="gb"]/div[4]/div[2]/div/c-wiz/div/div[1]/div[1]/div[1]').text
 logger.info(f"Capture store name: {store_name}")
@@ -126,32 +129,94 @@ P.scroll(-1000)
 time.sleep(2)
 P.click(button='left', x=690, y=866, clicks=1)
 time.sleep(2)
-# Select all data.
-P.hotkey("ctrl", "a")
-time.sleep(2)
+
+
 # Copy all data into Clipboard.
-P.hotkey("ctrl", "c")
-# Convert data from Clipboard into a pandas dataframe.
-df = pd.read_clipboard(sep='delimiter')
-# df = pd.read_clipboard(sep='delimiter', error_bad_lines=False)
-df_converted = pd.DataFrame(df.values, columns=['Index'])
-# Extract only Search query results.
-df_search_queries = df_converted.iloc[1::3]
-# Extract only Volume of search queries.
-df_volume = df_converted.iloc[2::3]
-# Assign Search query results a column name - 'Search query'.
-df_column_search_queries = pd.DataFrame(df_search_queries.values, columns=['Search query'])
-# Increment index
-df_column_search_queries.index = df_column_search_queries.index + 1
-if '00' in str(len(df_column_search_queries.index)):
-    time.sleep(2)
-    # Select all data.
+def copy_clipboard():
+    P.hotkey('ctrl', 'a')
+    time.sleep(0.1)
+    P.hotkey('ctrl', 'c')
+    time.sleep(0.1)
+    return pyperclip.paste()
+
+
+counter = 0
+dyn_list = []
+while counter <= 7:
+    time.sleep(0.5)
+    # Scroll down the web page.
     P.scroll(-10000)
-    print(P.position())
-    time.sleep(3)
-    # Adjust the logic for clicking on the Show more results button.
-    P.click(button='left', x=759, y=950, clicks=1)
+    time.sleep(0.5)
+    # P.doubleClick(P.position())
+    # Dynamic list to append.
+    var = copy_clipboard()
+    dyn_list = []
+    dyn_list.clear()
+    dyn_list.append(var)
+    # Extract only Search query results.
+    # df_search_queries = df_converted.iloc[1::3]
+    # Extract only Volume of search queries.
+    # df_volume = df_converted.iloc[2::3]
+    # Assign Search query results a column name - 'Search query'.
+    # df_column_search_queries = pd.DataFrame(df_search_queries.values, columns=['Search query'])
+    # Increment index
+    # df_column_search_queries.index = df_column_search_queries.index + 1
+    # time.sleep(1)
+    # print(str(len(df_column_search_queries.index)))
+    # print(df_column_search_queries.to_string())
+    # messagebox.showinfo("Extract individual page!")
     time.sleep(1)
-else:
-    driver.quit()
+    # Adjust the logic for clicking on the Show more results button.
+    P.click(button='left', x=900, y=940, clicks=1)
+    time.sleep(1)
+
+    counter += 1
+
+file_list_trimmed = []
+for el in dyn_list:
+    file_list_trimmed = [re.sub(r'\r\n', '|', el) for el in dyn_list]
+
+list_one = [l.split('|') for l in '|'.join(file_list_trimmed).split('|')]
+list_one.pop(0)
+list_one.pop(0)
+print(list_one)
+search = list_one[1::3]
+volume = list_one[2::3]
+print(search)
+print(volume)
+# print(f"List data: \n {list_query}")
+# df_converted = pd.DataFrame(dyn_list, columns=['Index'])
+# Extract only Search query results.
+# df_search_queries = df_converted.iloc[1::3]
+# Extract only Volume of search queries.
+# df_volume = df_converted.iloc[2::3]
+# Assign Search query results a column name - 'Search query'.
+# df_column_search_queries = pd.DataFrame(df_search_queries.values, columns=['Search_query'])
+# lambda expression for find/replace a comma with emtpy space, avoid a new line.
+# df_column_search_queries['Search_query'] = [x.replace(',', '') for x in df_column_search_queries['Search_query']]
+# Assign Volume data column a name - 'Volume'.
+# df_column_volume = pd.DataFrame(df_volume.values, columns=['Volume'])
+# Concatenate the dataframes into a single one.
+# df_search_queries_volume = pd.concat([df_column_search_queries, df_column_volume], axis=1)
+# print(df_search_queries_volume.values)
+# P.doubleClick(P.position())
+# Dynamic list to append.
+# dyn_list = []
+# var = copy_clipboard()
+# dyn_list.append(var)
+# print(dyn_list)
+# Convert data from Clipboard into a pandas dataframe.
+# df = pd.read_clipboard(sep='delimiter')
+# df = pd.read_clipboard(sep='delimiter', error_bad_lines=False)
+# df_converted = pd.DataFrame(df.values, columns=['Index'])
+# Extract only Search query results.
+# df_search_queries = df_converted.iloc[1::3]
+# Extract only Volume of search queries.
+# df_volume = df_converted.iloc[2::3]
+# Assign Search query results a column name - 'Search query'.
+# df_column_search_queries = pd.DataFrame(df_search_queries.values, columns=['Search query'])
+# Increment index
+# df_column_search_queries.index = df_column_search_queries.index + 1
+# driver.quit()
+
 # Think on how to start incrementation from one and make the logic for clicking on Button to view more results

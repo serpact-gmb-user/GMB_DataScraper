@@ -37,6 +37,8 @@ from openpyxl import Workbook
 import pyperclip
 import string
 import datetime
+from google.cloud import bigquery
+import pytz
 
 # Add emailing functionality (dev-error log, business log, error-screenshot attachment).
 username = "stoyan24"
@@ -121,7 +123,7 @@ try:
     logger.info("Navigating into GMB Data Scraper business account")
 except Exception:
     ex_type, ex_value, ex_traceback = sys.exc_info()
-    date = time.strftime('%d-%m-%Y_%H:%M:%S')
+    date = time.strftime('%Y-%m-%d %H:%M:%S')
     trace_back = traceback.extract_tb(ex_traceback)
     stack_trace = []
     for trace in trace_back:
@@ -132,7 +134,8 @@ except Exception:
 
 # Click on the 'Покажи още резултати' button
 actions = ActionChains(driver)
-WebDriverWait(driver, 4).until(EC.presence_of_element_located((By.XPATH, '//*[@id="yDmH0d"]/c-wiz/div[2]/div[1]/div/div/div[1]/div[2]/div[2]/div/div/div')))
+WebDriverWait(driver, 4).until(EC.presence_of_element_located(
+    (By.XPATH, '//*[@id="yDmH0d"]/c-wiz/div[2]/div[1]/div/div/div[1]/div[2]/div[2]/div/div/div')))
 # Extract retail store name.
 store_name = driver.find_element(By.XPATH, '//*[@id="gb"]/div[4]/div[2]/div/c-wiz/div/div[1]/div[1]/div[1]').text
 logger.info(f"Capture store name: {store_name}")
@@ -162,9 +165,9 @@ df_search_queries = df_converted.iloc[1::3]
 # Extract only Volume of search queries.
 df_volume = df_converted.iloc[2::3]
 # Assign Search query results a column name - 'Search query'.
-df_column_search_queries = pd.DataFrame(df_search_queries.values, columns=['Search query'])
+df_column_search_queries = pd.DataFrame(df_search_queries.values, columns=['Search_query'])
 # lambda expression for find/replace a comma with emtpy space, avoid a new line.
-df_column_search_queries['Search query'] = [x.replace(',', '') for x in df_column_search_queries['Search query']]
+df_column_search_queries['Search_query'] = [x.replace(',', '') for x in df_column_search_queries['Search_query']]
 # Assign Volume data column a name - 'Volume'.
 df_column_volume = pd.DataFrame(df_volume.values, columns=['Volume'])
 # Concatenate the dataframes into a single one.
@@ -181,22 +184,23 @@ time.sleep(2)
 messagebox.showinfo("Search query and Volume data combined into a single dataframe.")
 # Save the Google My Business Search query and Volume values inside a .csv file.
 np.savetxt(end_csv_file_name, np.c_[df_search_queries_volume], fmt='%s', delimiter=',',
-           header=str('Search query, Volume, Date'), comments='')
+           header=str('Search_query, Volume, Date'), comments='')
 
 # Insert Date and Group data inside end .csv file.
-df_search_queries_volume['Date'] = df_search_queries_volume['Search query'].apply(lambda x: date)
-df_search_queries_volume['Group'] = df_search_queries_volume['Search query'].apply(lambda y: store_name)
+df_search_queries_volume['Date'] = df_search_queries_volume['Search_query'].apply(lambda x: date)
+df_search_queries_volume['Group'] = df_search_queries_volume['Search_query'].apply(lambda y: store_name)
 
 # Save output to GMBDataScrapeFinal.csv file.
 np.savetxt(result_file, np.c_[df_search_queries_volume], fmt='%s', delimiter=',',
-           header=str('Search query, Volume, Date, Project, Group'), comments='')
+           header=str('Search_query, Volume, Date, Project, Group'), comments='')
 logger.info(f'Result file generated: {result_file}')
 messagebox.showinfo("Result file generated!")
-        # writer.writerows(data_output)
+# writer.writerows(data_output)
 # df_date = pd.DataFrame(date, columns=['Date']).fillna('')
 # df_date.to_csv(end_csv_file_name, mode='a', header=False)
 messagebox.showinfo("Wait to see the results!")
 logger.info(f"Save extracted web data into temporary .csv file in root directory: {end_csv_file_name}")
+# print(f"Search query: {df_search_queries_volume['Search query'].to_string(index=False, header=False)}")
 driver.quit()
 end_time = datetime.datetime.now()
 print(f'Process duration: {end_time - start_time}')
