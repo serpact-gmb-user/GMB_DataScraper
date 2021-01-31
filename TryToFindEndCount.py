@@ -142,6 +142,8 @@ def copy_clipboard():
 
 counter = 0
 dyn_list = []
+# Generate a custom list with arbitrary set of numbers ranging from 100 to 10 000 over a 100, use them to check for a
+# existing counter. Change the Volume column var type to int32 without a space delimiter.
 while counter <= 7:
     time.sleep(0.5)
     # Scroll down the web page.
