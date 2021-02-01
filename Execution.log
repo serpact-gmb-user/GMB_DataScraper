@@ -1,25 +1,30 @@
-__main__ - INFO - Current web link https://business.google.com/insights/l/16717946256408587345 : 01.02.2021_02:15:38
-__main__ - INFO - Reading GMB Business account links from GMB_Account_Data.csv : 01.02.2021_02:15:38
-__main__ - INFO - Entering username credential : 01.02.2021_02:15:44
-__main__ - INFO - Entering password credential : 01.02.2021_02:15:45
-__main__ - INFO - Error! Invalid credentials entered. Error type: ElementNotInteractableException : 01.02.2021_02:15:45
-__main__ - INFO - Error! Invalid credentials entered. Error type: ElementNotInteractableException : 01.02.2021_02:15:46
-__main__ - INFO - Error! Invalid credentials entered. Error type: ElementNotInteractableException : 01.02.2021_02:15:46
-__main__ - INFO - Error! Invalid credentials entered. Error type: ElementNotInteractableException : 01.02.2021_02:15:46
-__main__ - INFO - Error! Invalid credentials entered. Error type: ElementNotInteractableException : 01.02.2021_02:15:47
-__main__ - INFO - Current web link https://business.google.com/insights/l/16717946256408587345 : 01.02.2021_02:16:34
-__main__ - INFO - Reading GMB Business account links from GMB_Account_Data.csv : 01.02.2021_02:16:34
-__main__ - INFO - Entering username credential : 01.02.2021_02:16:40
-__main__ - INFO - Entering password credential : 01.02.2021_02:16:47
-__main__ - INFO - Navigating into GMB Data Scraper business account : 01.02.2021_02:16:50
-__main__ - INFO - Capture store name: Linson Moto - Moto Ekip : 01.02.2021_02:16:53
-__main__ - INFO - Current web link https://business.google.com/insights/l/04489153368599097956 : 01.02.2021_02:17:27
-__main__ - INFO - Reading GMB Business account links from GMB_Account_Data.csv : 01.02.2021_02:17:27
-__main__ - INFO - Capture store name: Hornschmuck : 01.02.2021_02:17:32
-__main__ - INFO - Current web link https://business.google.com/insights/l/00989318428858229135 : 01.02.2021_02:17:45
-__main__ - INFO - Reading GMB Business account links from GMB_Account_Data.csv : 01.02.2021_02:17:45
-__main__ - INFO - Capture store name: Санитарен Магазин „ Мария“ - Инвалидни колички, патерици, ортопедични обувки : 01.02.2021_02:17:49
-__main__ - INFO - Current web link https://business.google.com/insights/l/14858698530146316945 : 01.02.2021_02:18:02
-__main__ - INFO - Reading GMB Business account links from GMB_Account_Data.csv : 01.02.2021_02:18:02
-__main__ - INFO - Capture store name: Made of Horn | Alex Nikolo : 01.02.2021_02:18:07
-__main__ - INFO - Cleaning work .csv files from root folder: Group_Project_Date.csv, NewWebPageScrape.csv, FinalWebPageScrape.csv : 01.02.2021_02:18:20
+__main__ - INFO - Current web link https://business.google.com/insights/l/16717946256408587345 : 02.02.2021_00:15:26
+__main__ - INFO - Reading GMB Business account links from GMB_Account_Data.csv : 02.02.2021_00:15:26
+__main__ - INFO - Entering username credential : 02.02.2021_00:15:34
+__main__ - INFO - Entering password credential : 02.02.2021_00:15:41
+__main__ - INFO - Navigating into GMB Data Scraper business account : 02.02.2021_00:15:44
+__main__ - INFO - Capture store name: Linson Moto - Moto Ekip : 02.02.2021_00:15:47
+__main__ - INFO - Current web link https://business.google.com/insights/l/04489153368599097956 : 02.02.2021_00:16:32
+__main__ - INFO - Reading GMB Business account links from GMB_Account_Data.csv : 02.02.2021_00:16:32
+__main__ - INFO - Capture store name: Hornschmuck : 02.02.2021_00:16:39
+__main__ - INFO - Current web link https://business.google.com/insights/l/00989318428858229135 : 02.02.2021_00:16:56
+__main__ - INFO - Reading GMB Business account links from GMB_Account_Data.csv : 02.02.2021_00:16:56
+__main__ - INFO - Capture store name: Санитарен Магазин „ Мария“ - Инвалидни колички, патерици, ортопедични обувки : 02.02.2021_00:17:02
+__main__ - INFO - Process duration: 0:02:05.132395 : 02.02.2021_00:17:29
+__main__ - INFO - Process duration: 0:02:10.184743 : 02.02.2021_00:17:34
+__main__ - INFO - Process duration: 0:02:13.884922 : 02.02.2021_00:17:38
+__main__ - INFO - Current web link https://business.google.com/insights/l/16717946256408587345 : 02.02.2021_00:29:17
+__main__ - INFO - Reading GMB Business account links from GMB_Account_Data.csv : 02.02.2021_00:29:17
+__main__ - INFO - Entering username credential : 02.02.2021_00:29:25
+__main__ - INFO - Entering password credential : 02.02.2021_00:29:33
+__main__ - INFO - Navigating into GMB Data Scraper business account : 02.02.2021_00:29:36
+__main__ - INFO - Capture store name: Linson Moto - Moto Ekip : 02.02.2021_00:29:39
+__main__ - INFO - Process duration: 0:01:18.114115 : 02.02.2021_00:30:33
+__main__ - INFO - Current web link https://business.google.com/insights/l/04489153368599097956 : 02.02.2021_00:30:33
+__main__ - INFO - Reading GMB Business account links from GMB_Account_Data.csv : 02.02.2021_00:30:33
+__main__ - INFO - Capture store name: Hornschmuck : 02.02.2021_00:30:40
+__main__ - INFO - Process duration: 0:02:01.689707 : 02.02.2021_00:31:17
+__main__ - INFO - Current web link https://business.google.com/insights/l/00989318428858229135 : 02.02.2021_00:31:17
+__main__ - INFO - Reading GMB Business account links from GMB_Account_Data.csv : 02.02.2021_00:31:17
+__main__ - INFO - Capture store name: Санитарен Магазин „ Мария“ - Инвалидни колички, патерици, ортопедични обувки : 02.02.2021_00:31:23
+__main__ - INFO - Process duration: 0:02:32.525179 : 02.02.2021_00:31:48

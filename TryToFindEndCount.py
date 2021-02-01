@@ -213,14 +213,27 @@ search_query = split_on_pipe_list[1::3]
 volume = split_on_pipe_list[2::3]
 # print(search_query)
 # print(volume)
+# Convert Search query and Volume (int32) to DataFrame, use below logic, add Date, Project and Group columns.
+# Assign Search query results a column name - 'Search query'.
+df_column_search_queries = pd.DataFrame(search_query, columns=['Search_query'])
+# Assign Volume data column a name - 'Volume'.
+df_column_volume = pd.DataFrame(volume, columns=['Volume'])
+# Actions to remove empty spaces and comparison operators from origin dataframe.
+df_column_volume["Volume"] = df_column_volume["Volume"].str.replace(" ", "")
+df_column_volume["Volume"] = df_column_volume["Volume"].str.replace("<", "")
+df_column_volume["Volume"] = df_column_volume["Volume"].str.replace(">", "")
+df_column_volume["Volume"] = df_column_volume["Volume"].str.strip()
+# Concatenate the Search query and Volume dataframes into a single df.
+df_search_queries_volume = pd.concat([df_column_search_queries, df_column_volume], axis=1)
+print(df_search_queries_volume.to_string())
+
+
 # print(f"List data: \n {list_query}")
 # df_converted = pd.DataFrame(dyn_list, columns=['Index'])
 # Extract only Search query results.
 # df_search_queries = df_converted.iloc[1::3]
 # Extract only Volume of search queries.
 # df_volume = df_converted.iloc[2::3]
-# Assign Search query results a column name - 'Search query'.
-# df_column_search_queries = pd.DataFrame(df_search_queries.values, columns=['Search_query'])
 # lambda expression for find/replace a comma with emtpy space, avoid a new line.
 # df_column_search_queries['Search_query'] = [x.replace(',', '') for x in df_column_search_queries['Search_query']]
 # Assign Volume data column a name - 'Volume'.

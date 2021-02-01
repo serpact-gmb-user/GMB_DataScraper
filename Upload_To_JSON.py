@@ -1,38 +1,72 @@
 import csv
-import datetime
-import logging
+import json
+import math
 import os
+import time
 import re
 import sys
-import time
+from re import match
+from urllib.request import Request, urlopen
+
+import pandas as pd
+import numpy as np
+import logging
+import keyring
+import pywin32_system32
 import traceback
+
+from timeit import default_timer as timer
+from datetime import timedelta, datetime
 from tkinter import messagebox
 
-import keyring
-import numpy as np
-import pandas as pd
-import pyautogui as P
-import pyperclip
-from google.cloud import bigquery
+import requests
 from selenium import webdriver
-from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
+from bs4 import BeautifulSoup
+import httplib2
+from bs4 import BeautifulSoup, SoupStrainer
+import urllib.request
+import re
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from pynput.mouse import Button, Controller
+from selenium.webdriver.common.action_chains import ActionChains
+import urllib3
+import pyautogui as P
+from openpyxl import Workbook
+import pyperclip
+import string
+import datetime
+from google.cloud import bigquery
+import pytz
+import pyperclip
+import pyarrow
 
 # Add emailing functionality (dev-error log, business log, error-screenshot attachment).
-
-# Start execution time.
-start_time = datetime.datetime.now()
-# Windows credentials vault.
 username = "stoyan24"
 cred_username = "GMBUsername"
 cred_password = "GMBPassword"
-# Variable declaration.
+# print(keyring.get_password(cred_username, username))
+# print(keyring.get_password(cred_password, username))
+
+# Start execution time.
+start_time = datetime.datetime.now()
+# Credentials/variable declaration.
+# username = 'stoyan.ch.stoyanov11@gmail.com'
+# password = 'St-564289713'
+path_myBusinessLink = 'https://business.google.com/insights/l/00989318428858229135?hl=bg'
 GMB_Business_Accounts = 'GMB_Account_Data.csv'
+csv_file_name = 'Group_Project_Date.csv'
+new_csv_file_name = 'NewWebPageScrape.csv'
+final_csv_file_name = 'FinalWebPageScrape.csv'
+end_csv_file_name = 'Result.csv'
+result_file = 'GMBDataScrapeFinal.csv'
+values_to_remove = {"Разбивка на търсенията"}
+# Instantiate global lists for keywords and times they appear.
 # Iteration flag - 1 set to indicate first iteration for insert log-in credentials.
-group = ""
 iter_counter = 1
+group = ""
 gl_keywords_list = []
 gl_times_list = []
 # Instantiate emtpy lists to hold web element data.
@@ -40,6 +74,8 @@ list_elements = []
 new_list_elements = []
 # Search query, Volume raw data list.
 dynamic_web_list = []
+# Regex pattern
+regEx = "^[0-9]{1,}"
 # Numpy array holding page index comparison values.
 np_arr_page_indexes = np.array(["100", "200", "300", "400", "500", "600", "700", "800", "900", "1000",
                                 "1100", "1200", "1300", "1400", "1500", "1600", "1700", "1800",
@@ -90,10 +126,13 @@ for row in csv_reader:
     logger.info(f"Current web link {row[1]}")
     logger.info(f"Reading GMB Business account links from {GMB_Business_Accounts}")
 
-    # Iterate over GMB Accounts from GMB_Accounts_Data .csv file.
-    driver.get(row[1])
-    time.sleep(3)
+    driver.get("https://business.google.com/insights/l/16717946256408587345")
+    # driver.get(row[1]) Multiple iterations from .csv file.
+    time.sleep(1)
     driver.maximize_window()
+    # driver.get("https://business.google.com/insights/l/16717946256408587345")
+    # driver.get("https://business.google.com/local/business/12976422705466664939/promote/performance/queries")
+    # driver.get("https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?redirect_uri=https%3A%2F%2Fdevelopers.google.com%2Foauthplayground&prompt=consent&response_type=code&client_id=407408718192.apps.googleusercontent.com&scope=email&access_type=offline&flowName=GeneralOAuthFlow")
     time.sleep(2)
 
     if iter_counter == 1:
@@ -153,10 +192,8 @@ for row in csv_reader:
     WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.TAG_NAME, 'header')))
     time.sleep(4)
     # Select all data from current screen.
-    P.click(button='left', x=400, y=500, clicks=1)
-    time.sleep(2)
     P.scroll(-2000)
-    time.sleep(3)
+    time.sleep(4)
     # Click on Show more result queries button.
     P.click(button='left', x=690, y=866, clicks=1)
     time.sleep(3)
@@ -194,68 +231,62 @@ for row in csv_reader:
         if list_ext_web_index not in np_arr_page_indexes:
             break
 
-    # Instantiate empty list.
-    trim_carriage_return = []
-    for el in dynamic_web_list:
-        trim_carriage_return = [re.sub(r'\r\n', '|', el) for el in dynamic_web_list]
+# Instantiate empty list.
+trim_carriage_return = []
+for el in dynamic_web_list:
+    trim_carriage_return = [re.sub(r'\r\n', '|', el) for el in dynamic_web_list]
 
-    split_on_pipe_list = [l.split('|') for l in '|'.join(trim_carriage_return).split('|')]
-    # Remove 'Разширения на търсенията'.
-    split_on_pipe_list.pop(0)
-    split_on_pipe_list.pop(0)
-    # Extract 'Search query' and 'Volume' data (before DataFrame insertion).
-    index = split_on_pipe_list[0::3]
-    # Convert index to an integer.
-    index = [int(i) for i in index[-1]]
-    messagebox.showinfo("Pause!")
-    search_query = split_on_pipe_list[1::3]
-    volume = split_on_pipe_list[2::3]
-    # Assign Search query results a column name - 'Search query'.
-    df_column_search_queries = pd.DataFrame(search_query, columns=['Search_query'])
-    # lambda expression for find/replace a comma with emtpy space, avoid a new line.
-    df_column_search_queries['Search_query'] = [x.replace(',', '') for x in df_column_search_queries['Search_query']]
-    # Assign Volume data column a name - 'Volume'.
-    df_column_volume = pd.DataFrame(volume, columns=['Volume'])
-    # Actions to remove empty spaces and comparison operators from origin dataframe.
-    df_column_volume["Volume"] = df_column_volume["Volume"].str.replace(" ", "")
-    df_column_volume["Volume"] = df_column_volume["Volume"].str.replace("<", "")
-    df_column_volume["Volume"] = df_column_volume["Volume"].str.replace(">", "")
-    df_column_volume["Volume"] = df_column_volume["Volume"].str.strip()
-    # Generate date time in custom format dd-MM-yyyy HH:mm:ss.
-    current_date = [time.strftime("%d-%m-%Y %H:%M:%S")]
-    date = time.strftime("%d-%m-%Y %H:%M:%S")
-    shop_name = driver.find_element(By.XPATH, '//*[@id="gb"]/div[4]/div[2]/div/c-wiz/div/div[1]/div[1]/div[1]')
-    df_date = pd.DataFrame(current_date, columns=['Date'])
-    # Concatenate the Search query, Volume and Date dataframes into a single df.
-    df_search_queries_volume = pd.concat([df_column_search_queries, df_column_volume, df_date], axis=1)
-    # Insert Date and Group data inside end dataframe structure.
-    df_search_queries_volume['Date'] = df_search_queries_volume['Search_query'].apply(lambda x: date)
-    df_search_queries_volume['Project_ID'] = df_search_queries_volume['Search_query'].apply(lambda y: store_name)
-    df_search_queries_volume['Group_ID'] = df_search_queries_volume['Search_query'].apply(lambda y: group)
+split_on_pipe_list = [l.split('|') for l in '|'.join(trim_carriage_return).split('|')]
+# Remove 'Разширения на търсенията'.
+split_on_pipe_list.pop(0)
+split_on_pipe_list.pop(0)
+# Extract 'Search query' and 'Volume' data (before DataFrame insertion).
+index = split_on_pipe_list[0::3]
+# Convert index to an integer.
+index = [int(i) for i in index[-1]]
+messagebox.showinfo("Pause!")
+search_query = split_on_pipe_list[1::3]
+volume = split_on_pipe_list[2::3]
+# Assign Search query results a column name - 'Search query'.
+df_column_search_queries = pd.DataFrame(search_query, columns=['Search_query'])
+# lambda expression for find/replace a comma with emtpy space, avoid a new line.
+df_column_search_queries['Search_query'] = [x.replace(',', '') for x in df_column_search_queries['Search_query']]
+# Assign Volume data column a name - 'Volume'.
+df_column_volume = pd.DataFrame(volume, columns=['Volume'])
+# Actions to remove empty spaces and comparison operators from origin dataframe.
+df_column_volume["Volume"] = df_column_volume["Volume"].str.replace(" ", "")
+df_column_volume["Volume"] = df_column_volume["Volume"].str.replace("<", "")
+df_column_volume["Volume"] = df_column_volume["Volume"].str.replace(">", "")
+df_column_volume["Volume"] = df_column_volume["Volume"].str.strip()
+# Generate date time in custom format dd-MM-yyyy HH:mm:ss.
+current_date = [time.strftime("%d-%m-%Y %H:%M:%S")]
+date = time.strftime("%d-%m-%Y %H:%M:%S")
+shop_name = driver.find_element(By.XPATH, '//*[@id="gb"]/div[4]/div[2]/div/c-wiz/div/div[1]/div[1]/div[1]')
+df_date = pd.DataFrame(current_date, columns=['Date'])
+# Concatenate the Search query, Volume and Date dataframes into a single df.
+df_search_queries_volume = pd.concat([df_column_search_queries, df_column_volume, df_date], axis=1)
+# Insert Date and Group data inside end dataframe structure.
+df_search_queries_volume['Date'] = df_search_queries_volume['Search_query'].apply(lambda x: date)
+df_search_queries_volume['Project_ID'] = df_search_queries_volume['Search_query'].apply(lambda y: store_name)
+df_search_queries_volume['Group'] = df_search_queries_volume['Search_query'].apply(lambda y: group)
+print(df_search_queries_volume.to_string())
+messagebox.showinfo("Print element at each iteration!")
 
-    # API Configuration.
-    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.path.dirname(os.path.abspath(__file__)) + "\service_account.json"
-    client = bigquery.Client()
-    table_id = "test_dataset.GMB_DataTable"
 
-    # Splitting data size into 5 equal chunks of data, load the data straight from DataFrame into BigQuery (gbq-API).
-    for data in np.array_split(df_search_queries_volume, 1):
-        job_config = bigquery.LoadJobConfig(schema=[
-            bigquery.SchemaField("Search_query", bigquery.enums.SqlTypeNames.STRING),
-            bigquery.SchemaField("Volume", bigquery.enums.SqlTypeNames.STRING),
-            bigquery.SchemaField("Date", bigquery.enums.SqlTypeNames.STRING),
-            bigquery.SchemaField("Project_ID", bigquery.enums.SqlTypeNames.STRING),
-            bigquery.SchemaField("Group_ID", bigquery.enums.SqlTypeNames.STRING)
-        ])
+# json_data = df_search_queries_volume.to_json(os.path.dirname(os.path.abspath(__file__)) + "\GMB_BigQueryData.json")
+# json_object = json.loads(json_data)
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.path.dirname(os.path.abspath(__file__)) + "\service_account.json"
+client = bigquery.Client()
+table_id = "test_dataset.GMB_DataTable"
 
-        # Append the data at each iteration.
-        job_config.write_disposition = bigquery.WriteDisposition.WRITE_APPEND
-        job = client.load_table_from_dataframe(data, table_id, job_config=job_config)
-        job.result()
-        # End timestamp.
-        end_time = datetime.datetime.now()
-        print(end_time)
-        logger.info(f'Process duration: {end_time - start_time}')
-
-# Closing active web browser.
-driver.quit()
+for df_chunk in np.array_split(df_search_queries_volume, 5):
+    job_config = bigquery.LoadJobConfig(schema=[
+        bigquery.SchemaField("Search_query", bigquery.enums.SqlTypeNames.STRING),
+        bigquery.SchemaField("Volume", bigquery.enums.SqlTypeNames.STRING),
+        bigquery.SchemaField("Date", bigquery.enums.SqlTypeNames.STRING),
+        bigquery.SchemaField("Project_ID", bigquery.enums.SqlTypeNames.STRING),
+        bigquery.SchemaField("Group", bigquery.enums.SqlTypeNames.STRING)
+    ])
+    job_config.write_disposition = bigquery.WriteDisposition.WRITE_APPEND
+    job = client.load_table_from_dataframe(df_chunk, table_id, job_config=job_config)
+    job.result()
