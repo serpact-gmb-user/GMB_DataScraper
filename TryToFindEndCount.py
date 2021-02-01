@@ -84,10 +84,11 @@ logger.info("Entering username credential")
 # Click on Next button.
 button_element = driver.find_element(By.ID, 'identifierNext')
 button_element.click()
-time.sleep(2)
+time.sleep(4)
 # Select the password input field.
+WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.NAME, 'password')))
 password_element = driver.find_element(By.NAME, 'password')
-time.sleep(1)
+# time.sleep(3)
 logger.info("Entering password credential")
 try:
     # Enter password credentials.
@@ -122,7 +123,9 @@ button_keywords = driver.find_element(By.XPATH,
                                       '//*[@id="yDmH0d"]/c-wiz/div[2]/div[1]/div/div/div[1]/div[2]/div[2]/div/div/div')
 WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.CLASS_NAME, 'VfPpkd-vQzf8d')))
 button_keywords.click()
-WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.TAG_NAME, 'header')))
+# Check for 'Ефективност' web element.
+# WebDriverWait(driver, 4).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[3]')))
+WebDriverWait(driver, 4).until(EC.presence_of_element_located((By.TAG_NAME, 'header')))
 time.sleep(3)
 # Select all data.
 P.scroll(-1000)
@@ -140,11 +143,18 @@ def copy_clipboard():
     return pyperclip.paste()
 
 
-counter = 0
 dyn_list = []
-# Generate a custom list with arbitrary set of numbers ranging from 100 to 10 000 over a 100, use them to check for a
-# existing counter. Change the Volume column var type to int32 without a space delimiter.
-while counter <= 7:
+np_arr_page_indexes = np.array(["100", "200", "300", "400", "500", "600", "700", "800", "900", "1000",
+                     "1100", "1200", "1300", "1400", "1500", "1600", "1700", "1800",
+                     "1900", "2000", "2100", "2200", "2300", "2400", "2500", "2600", "2700", "2800",
+                     "2900", "3000", "3100", "3200", "3300", "3400", "3500", "3600", "3700", "3800", "3900", "4000"])
+
+# Convert the data into dataframe.
+# Change the Volume column var type to int32 without a space delimiter;
+# Remove all of the comparison operators;
+# Add Try Except Else Finally to capture possible errors of missing or incorrect URL address - if so, log a message and proceed;
+
+while True:
     time.sleep(0.5)
     # Scroll down the web page.
     P.scroll(-10000)
@@ -164,8 +174,7 @@ while counter <= 7:
     # Remove 'Разширения на търсенията'.
     split_on_pipe_list.pop(0)
     index = split_on_pipe_list[1::3]
-    print(index[-1])
-    messagebox.showinfo("Show index!")
+    # if (index[-1]) in list_page_indexes:
     # Extract only Search query results.
     # df_search_queries = df_converted.iloc[1::3]
     # Extract only Volume of search queries.
@@ -182,8 +191,13 @@ while counter <= 7:
     # Adjust the logic for clicking on the Show more results button.
     P.click(button='left', x=900, y=940, clicks=1)
     time.sleep(1)
+    # Instantiate list for storing index values.
+    index_list = []
+    index_list.clear()
+    index_list.append(index[-1])
     # Increment counter.
-    counter += 1
+    if index_list not in np_arr_page_indexes:
+        break
 
 # Instantiate empty list.
 trim_carriage_return = []
@@ -194,12 +208,11 @@ split_on_pipe_list = [l.split('|') for l in '|'.join(trim_carriage_return).split
 # Remove 'Разширения на търсенията'.
 split_on_pipe_list.pop(0)
 split_on_pipe_list.pop(0)
-# print(split_on_pipe_list)
 # Extract 'Search query' and 'Volume' data (before DataFrame insertion).
 search_query = split_on_pipe_list[1::3]
 volume = split_on_pipe_list[2::3]
-print(search_query)
-print(volume)
+# print(search_query)
+# print(volume)
 # print(f"List data: \n {list_query}")
 # df_converted = pd.DataFrame(dyn_list, columns=['Index'])
 # Extract only Search query results.
