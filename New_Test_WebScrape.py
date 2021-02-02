@@ -129,7 +129,7 @@ for row in csv_reader:
             driver.save_screenshot("{0}_Invalid_URL_{1}.png".format(date, ex_type.__name__))
             logger.info(stack_trace)
             logger.info(f"Assertion error! Invalid email address: {row[1]}\n Exception type: {ex_type.__name__}")
-            password = "St-564289713"
+        password = "St-564289713"
         # password = input("Please, provide your email login password here:")
         try:
             # Sending email due to error encountered to recipient list.
@@ -285,11 +285,13 @@ for row in csv_reader:
     df_search_queries_volume = pd.concat([df_column_search_queries, df_column_volume, df_date], axis=1)
     # Insert Date and Group data inside end dataframe structure.
     df_search_queries_volume['Date'] = df_search_queries_volume['Search_query'].apply(lambda x: date)
-    df_search_queries_volume['Project_ID'] = df_search_queries_volume['Search_query'].apply(lambda y: store_name)
-    df_search_queries_volume['Group_ID'] = df_search_queries_volume['Search_query'].apply(lambda y: group)
-    # date_time_loaded = datetime.datetime.utcnow()
-    # df_search_queries_volume['Date_Loaded_In'] = df_search_queries_volume['Date_Loaded_In'].apply(lambda z: date_time_loaded).astype(timestamp)
-    # df_search_queries_volume['Date_Loaded_In'] = df_search_queries_volume['Date_Loaded_In'].apply(lambda z: date_time_loaded).astype(timestamp)
+    df_search_queries_volume['Account_ID'] = df_search_queries_volume['Search_query'].apply(lambda y: store_name)
+    df_search_queries_volume['Location_ID'] = df_search_queries_volume['Search_query'].apply(lambda y: group)
+    # Convert current datetime from string into datetime in the format yyyy-MM-dd HH:MM:SS
+    date_string = time.strftime('%Y-%m-%d %H:%M:%S')
+    date_time_loaded = datetime.datetime.strptime(date_string, '%Y-%m-%d %H:%M:%S')
+    df_search_queries_volume['_Time_Loaded'] = df_search_queries_volume['Search_query'].apply(lambda x: date_time_loaded).astype(str)
+
     # API Configuration.
     os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.path.dirname(os.path.abspath(__file__)) + "\service_account.json"
     client = bigquery.Client()
@@ -301,8 +303,9 @@ for row in csv_reader:
             bigquery.SchemaField("Search_query", bigquery.enums.SqlTypeNames.STRING),
             bigquery.SchemaField("Volume", bigquery.enums.SqlTypeNames.STRING),
             bigquery.SchemaField("Date", bigquery.enums.SqlTypeNames.STRING),
-            bigquery.SchemaField("Project_ID", bigquery.enums.SqlTypeNames.STRING),
-            bigquery.SchemaField("Group_ID", bigquery.enums.SqlTypeNames.STRING),
+            bigquery.SchemaField("Account_ID", bigquery.enums.SqlTypeNames.STRING),
+            bigquery.SchemaField("Location_ID", bigquery.enums.SqlTypeNames.STRING),
+            bigquery.SchemaField("_Time_Loaded", bigquery.enums.SqlTypeNames.STRING),
         ])
 
         # Append the data at each iteration.
