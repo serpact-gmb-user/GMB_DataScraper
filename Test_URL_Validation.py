@@ -25,4 +25,5 @@ for row in csv_reader:
     else:
         print(re.match(regex, row[1]) is not None)
         continue
-    # print(re.match(regex, row[1]) is not None)
+
+    print("Hello")

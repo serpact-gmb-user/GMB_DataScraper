@@ -15,7 +15,9 @@ import numpy as np
 import pandas as pd
 import pyautogui as P
 import pyperclip
+import yagmail
 from google.cloud import bigquery
+from pandas_gbq import timestamp
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
@@ -48,7 +50,25 @@ np_arr_page_indexes = np.array(["100", "200", "300", "400", "500", "600", "700",
                                 "1900", "2000", "2100", "2200", "2300", "2400", "2500", "2600", "2700", "2800",
                                 "2900", "3000", "3100", "3200", "3300", "3400", "3500", "3600", "3700", "3800", "3900",
                                 "4000"])
+# Regex for identifying proper URL addresses.
+url_regex = re.compile(r'^(?:http|ftp)s?://'  
+                   r'(?:(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)+(?:[A-Z]{2,6}\.?|[A-Z0-9-]{2,}\.?)|'
+                   r'localhost|'
+                   r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})'
+                   r'(?::\d+)?'
+                   r'(?:/?|[/?]\S+)$', re.IGNORECASE)
 
+# Email configuration detail (Email body for success, failure, filename).
+receiver = "stoyan.ch.stoyanov11@gmail.com" ### TO ADD ADDITIONAL EMAIL(s) OR A .CSV FILE FOR BULK DISPATCH.
+email_subject_success = f"GMB_DataScraping - successful execution. {time.strftime('%d-%m-%Y %H:%M:%S')}"
+email_subject_error = f"GMB_DataScraping - unsuccessful execution. {time.strftime('%d-%m-%Y %H:%M:%S')}"
+email_body_success = "Dear business owner, \n\n the Search queries and Volume data have been successfully extracted " \
+                     "from your store. \n\n Kind regards, \n\n GMB_DataScraping Team"
+email_body_fail = "Dear business owner, \n\n the process for extracting Search query and Volume data has encountered \
+                    an error. Process was terminated. \n\n Kind regards, \n\n GMB_DataScraping Team"
+filename = "Execution.log"
+
+# Chromedriver .exe absolute path location.
 path = os.path.dirname(os.path.abspath(__file__)) + '/chromedriver.exe'
 # Chromedriver.exe path. NB: Browser navigation made to headless with options set to True.
 driver = webdriver.Chrome(executable_path=path)
@@ -87,10 +107,36 @@ for row in csv_reader:
         pass
     csv_dict[key] = row[1:]
     # Skipping .csv GMB Accounts header row.
+    logger.info(f"Reading GMB Business account links from {GMB_Business_Accounts} file.")
     if row[1] == 'GMB Accounts':
         continue
-    logger.info(f"Current web link {row[1]}")
-    logger.info(f"Reading GMB Business account links from {GMB_Business_Accounts}")
+    try:
+        if re.match(url_regex, row[1]) is None:
+            assert f"The current email address:{row[1]} is invalid! URL logged in Execution.log. Proceed with next URL."
+            # Proceed with next email address.
+            continue
+        else:
+            logger.info(f"Current web link: {row[1]}")
+            print(re.match(url_regex, row[1]) is not None)
+    except AssertionError as a:
+        ex_type, ex_value, ex_traceback = sys.exc_info()
+        date = time.strftime('%Y-%m-%d %H:%M:%S')
+        trace_back = traceback.extract_tb(ex_traceback)
+        stack_trace = []
+        for trace in trace_back:
+            stack_trace.append(
+                "File : %s , Line: %s , Func.Name: %s, Message: %s" % (trace[0], trace[1], trace[2], trace[3]))
+            driver.save_screenshot("{0}_Invalid_URL_{1}.png".format(date, ex_type.__name__))
+            logger.info(stack_trace)
+            logger.info(f"Assertion error! Invalid email address: {row[1]}\n Exception type: {ex_type.__name__}")
+            password = "St-564289713"
+        # password = input("Please, provide your email login password here:")
+        try:
+            # Sending email due to error encountered to recipient list.
+            yag = yagmail.SMTP(receiver, password=password)
+            yag.send(to=receiver, subject=email_subject_error, contents=email_body_fail, attachments=filename)
+        except Exception as e:
+            print(f"Error encountered during email dispatch: {e}\n {ex_type.__name__}")
 
     # Iterate over GMB Accounts from GMB_Accounts_Data .csv file.
     driver.get(row[1])
@@ -136,6 +182,14 @@ for row in csv_reader:
                     "File : %s , Line: %s , Func.Name: %s, Message: %s" % (trace[0], trace[1], trace[2], trace[3]))
                 driver.save_screenshot("{0}_Error_{1}.png".format(date, ex_type.__name__))
                 logger.info(f"Error! Invalid credentials entered. Error type: {ex_type.__name__}")
+                password = "St-564289713"
+                # password = input("Please, provide your email login password here:")
+                try:
+                    # Sending email due to error encountered to recipient list.
+                    yag = yagmail.SMTP(receiver, password=password)
+                    yag.send(to=receiver, subject=email_subject_error, contents=email_body_fail, attachments=filename)
+                except Exception as e:
+                    print(f"Error encountered during email dispatch: {e}\n {ex_type.__name__}")
         # Increment counter by 1.
         iter_counter += 1
 
@@ -209,7 +263,6 @@ for row in csv_reader:
     index = split_on_pipe_list[0::3]
     # Convert index to an integer.
     index = [int(i) for i in index[-1]]
-    messagebox.showinfo("Pause!")
     search_query = split_on_pipe_list[1::3]
     volume = split_on_pipe_list[2::3]
     # Assign Search query results a column name - 'Search query'.
@@ -234,7 +287,9 @@ for row in csv_reader:
     df_search_queries_volume['Date'] = df_search_queries_volume['Search_query'].apply(lambda x: date)
     df_search_queries_volume['Project_ID'] = df_search_queries_volume['Search_query'].apply(lambda y: store_name)
     df_search_queries_volume['Group_ID'] = df_search_queries_volume['Search_query'].apply(lambda y: group)
-
+    # date_time_loaded = datetime.datetime.utcnow()
+    # df_search_queries_volume['Date_Loaded_In'] = df_search_queries_volume['Date_Loaded_In'].apply(lambda z: date_time_loaded).astype(timestamp)
+    # df_search_queries_volume['Date_Loaded_In'] = df_search_queries_volume['Date_Loaded_In'].apply(lambda z: date_time_loaded).astype(timestamp)
     # API Configuration.
     os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.path.dirname(os.path.abspath(__file__)) + "\service_account.json"
     client = bigquery.Client()
@@ -247,7 +302,7 @@ for row in csv_reader:
             bigquery.SchemaField("Volume", bigquery.enums.SqlTypeNames.STRING),
             bigquery.SchemaField("Date", bigquery.enums.SqlTypeNames.STRING),
             bigquery.SchemaField("Project_ID", bigquery.enums.SqlTypeNames.STRING),
-            bigquery.SchemaField("Group_ID", bigquery.enums.SqlTypeNames.STRING)
+            bigquery.SchemaField("Group_ID", bigquery.enums.SqlTypeNames.STRING),
         ])
 
         # Append the data at each iteration.
@@ -258,6 +313,24 @@ for row in csv_reader:
         end_time = datetime.datetime.now()
         print(end_time)
         logger.info(f'Process duration: {end_time - start_time}')
+
+# Successful execution. Dispatching email to dev team.
+password = "St-564289713"
+# password = input("Please, provide your email login password here:")
+# Sending email due to error encountered to recipient list.
+try:
+    yag = yagmail.SMTP(receiver, password=password)
+    yag.send(to=receiver, subject=email_subject_success, contents=email_body_success, attachments=filename)
+except Exception as e:
+    ex_type, ex_value, ex_traceback = sys.exc_info()
+    date = time.strftime('%Y-%m-%d %H:%M:%S')
+    trace_back = traceback.extract_tb(ex_traceback)
+    stack_trace = []
+    for trace in trace_back:
+        stack_trace.append(
+            "File : %s , Line: %s , Func.Name: %s, Message: %s" % (trace[0], trace[1], trace[2], trace[3]))
+        driver.save_screenshot("{0}_Error_{1}.png".format(date, ex_type.__name__))
+        logger.info(f"Error encountered during email dispatch: {e}\n {ex_type.__name__}")
 
 # Closing active web browser.
 driver.quit()
