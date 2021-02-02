@@ -6,6 +6,8 @@ import re
 import sys
 import time
 import traceback
+import logging
+import logging.handlers
 from tkinter import messagebox
 
 import keyring
@@ -238,7 +240,7 @@ for row in csv_reader:
     client = bigquery.Client()
     table_id = "test_dataset.GMB_DataTable"
 
-    # Splitting data size into 5 equal chunks of data, load the data straight from DataFrame into BigQuery (gbq-API).
+    # Splitting data size into 1 equal chunks of data, load the data straight from DataFrame into BigQuery (gbq-API).
     for data in np.array_split(df_search_queries_volume, 1):
         job_config = bigquery.LoadJobConfig(schema=[
             bigquery.SchemaField("Search_query", bigquery.enums.SqlTypeNames.STRING),
